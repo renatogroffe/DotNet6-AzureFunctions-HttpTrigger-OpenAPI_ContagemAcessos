@@ -23,7 +23,7 @@ public class ValorAtual
     [Function(nameof(ValorAtual))]
     [OpenApiOperation(operationId: nameof(ValorAtual), tags: new[] { "ValorAtual" })]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "application/json", bodyType: typeof(ResultadoContador), Description = "Resultado da contagem de acessos")]
-    public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req)
+    public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req)
     {
         int valorAtualContador;
         lock (_contador)
